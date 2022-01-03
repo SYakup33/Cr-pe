@@ -3,7 +3,7 @@
         // Attributs, Propriéte ce sont des variables déclarés dans les class
         // public, réutilisable à l'intérieur et à l'extérieur de la class
         // private, réutilisable que à l'intérieur de la class
-        public $oeuf;          //entier qui correspond au nombre d'oeuf
+        private $oeuf;          //entier qui correspond au nombre d'oeuf
         public $beurre;        //entier qui correspond à la quantité de beurre gramme de beurre
         public $lait;          //entier qui correspond à la quantité de lait en litre 
         public $sucre;         //entier qui correspond à la quantité en cuillère à soupe
@@ -58,6 +58,14 @@
             echo $this->farine." quantité de farine en gramme.\n";
             echo $this->rhum." cuillère à soupe de rhum.\n";
             echo "\n";
+        }
+        //Récupérer un attribut privée -> get
+        public function getOeuf (){
+            return  $this->oeuf;              
+        }
+        //Modifier un attribut privée -> set
+        public function setOeuf ($parametre){
+            $this->oeuf = $parametre;
         }
     }   
 ?>
