@@ -14,6 +14,9 @@
     echo $crepe_au_nutella->getOeuf()."\n";
 
     // On modifie le topping, on ajoute un suppléments à notre crêpe
-    $crepe_au_nutella->addTopping("chantily","caramel");
-    var_dump ($crepe_au_nutella->getTopping());
+    $crepe_au_nutella->addTopping("chantily","caramel","miel","confiture");
+    // var_dump ($crepe_au_nutella->getTopping());
+
+    $crepe_au_nutella->destroy("chantily");
+    // var_dump ($crepe_au_nutella->getTopping());
 ?>

@@ -76,9 +76,16 @@
         public function getTopping (){
             return  $this->topping;              
         }
-        public function addTopping ($newTopping1,$newTopping2){
-            array_push($this->topping,"$newTopping1","$newTopping2");
+        public function addTopping ($newTopping1,$newTopping2,$newTopping3,$newTopping4){
+            array_push($this->topping,"$newTopping1","$newTopping2","$newTopping3","$newTopping4");
         }
 
+        // Supprimer une string d'un tableau, la méthode unset
+        // 1 la liste des topping $this->topping
+        // 2 le mot à supprimer, on recherche le mot ($delTopping) dans la liste des topping avec array_search
+        public function destroy ($delTopping){
+            unset($this->topping[array_search($delTopping,$this->topping)]);
+        }
+        
     }   
 ?>
