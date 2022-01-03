@@ -12,6 +12,7 @@
         public $rhum;          //entier qui correspond à la quantité de cuillère à soupe rhum
         public $orange;        // entier qui correspond à la quantité d'une orange, 0,5 -> moitié
         public $nutella;       // entier qui correspond à la quantité de nutella en gramme
+        private $topping;      // chaine de caractère, suppléments à ajouter à la crepe
 
         //Méthodes, ce sont des fonctions déclarés dans les class
         public function __construct( //Méthode qui va être appelée(exécutée) automatiquement à chaque fois qu on va instancier une class
@@ -23,7 +24,8 @@
             $farine,
             $rhum,
             $orange,
-            $nutella
+            $nutella,
+            $topping
 
         ){
             //Traitement de votre fonction
@@ -36,6 +38,7 @@
             $this->farine = $farine;
             $this->orange = $orange;
             $this->nutella = $nutella;
+            $this->topping = $topping;
         }
         
         public function afficher_recette(){ // Ici on affiche la recette, quantité des ingrédients
@@ -57,6 +60,7 @@
             echo $this->sel." quantité de sel en gramme .\n"; 
             echo $this->farine." quantité de farine en gramme.\n";
             echo $this->rhum." cuillère à soupe de rhum.\n";
+            echo $this->topping." en suppléments.\n";
             echo "\n";
         }
         //Récupérer un attribut privée -> get
@@ -67,5 +71,14 @@
         public function setOeuf ($parametre){
             $this->oeuf = $parametre;
         }
+
+        //Modifier le contenu privée d'un string d'un tableau, pour les topping
+        public function getTopping (){
+            return  $this->topping;              
+        }
+        public function addTopping ($newTopping1,$newTopping2){
+            array_push($this->topping,"$newTopping1","$newTopping2");
+        }
+
     }   
 ?>
